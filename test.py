@@ -8,7 +8,9 @@ def test():
     obj = {
         "zipcode": "98101"
     }
-    res = requests.post(url+route, data=obj)
+    objddd = json.dumps(obj)
+    print(json.dumps(obj))
+    res = requests.post(url+route, json={"zipcode": 98101})
     parse = json.loads(res.text)
     print(parse["officials"]["representatives"][0]["name"])
 
