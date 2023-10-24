@@ -48,6 +48,7 @@ app.post("/zip", (req, res) => {
       const officials = findReps(response.data);
       const district = findDistrict(response.data);
       const input = response.data.normalizedInput;
+      console.log("Sending", officials, district, input);
       res.status(200).json({ officials, district, input });
     })
     .catch((err) => {
